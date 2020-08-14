@@ -1,0 +1,161 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* take note of some variables */
+:root {
+  --header-height: 60px;
+  
+/*  background colors  */
+  --header-background-color: #fff;
+  
+/*  text colors  */
+  --general-text-color: #666;
+}
+
+/* ---------------- HEADER ---------------- */
+
+/* our header will be fixed at the top of the page and never move */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  box-shadow: 0 0 8px 1px #ddd;
+  background-color: var(--header-background-color);
+  padding: 0 16px;
+  z-index: 10000;
+}
+
+.logo {
+/*  nothing here yet  */
+}
+
+.header-links {
+  display: flex;
+  margin: 0 40px 0 40px;    /* give us some room between the logo and edge */
+  height: var(--header-height);
+}
+
+.header-link, .header-link-current {
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--general-text-color);
+  padding: 0 20px 0 20px;
+  line-height: var(--header-height);    /* this makes the text centered */
+}
+
+.header-link-current {
+/*  change the appearance of the current page's link  */
+  color: #000;
+  background-color: #eee;
+  background-image: radial-gradient(ellipse at center, #ccc 0%, #fff 60%);
+}
+
+.header-link:hover {
+/*  on hover, we want to change the link's appearance slightly  */
+  color: #000;
+}
+
+a:link, a:visited {
+  color: var(--general-text-color);
+  text-decoration: none;  /* remove any text decoration */
+}
+
+/* ---------------- END HEADER ---------------- */
+
+
+
+
+/* ---------------- MENU AND CONTENT ---------------- */
+
+.menu-and-content {
+  margin-top: var(--header-height);
+  display: grid;
+  row-gap: 0;
+  column-gap: 10px;
+  grid-template-areas: "menu content";
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ---------------- END MENU AND CONTENT ---------------- */
+
+
+
+
+/* ---------------- MENU ---------------- */
+
+.menu {
+  grid-area: menu;
+  padding: 10px;
+  color: var(--general-text-color);
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+}
+
+.menu-filter-wrapper {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-filter-label {
+  font-weight: bold;
+  margin: 0 0 2px 0;
+}
+
+.menu-filter {
+/*  nothing here yet  */
+}
+
+/* ---------------- END MENU ---------------- */
+
+
+
+
+/* ---------------- CONTENT ---------------- */
+
+.content {
+  grid-area: content;
+  padding: 10px 10px 0 0;
+  color: var(--general-text-color);
+}
+
+.content-output-and-filter-wrapper {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.content-filter-wrapper {
+  min-width: 150px;
+  max-width: 200px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.content-filter-label {
+  font-weight: bold;
+}
+
+.content-filter {
+/*  nothing here yet  */
+}
+
+.content-output-wrapper {
+/*  nothing here yet  */
+}
+
+.content-output-label {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.content-output {
+/*  nothing here yet  */
+}
+
+/* ---------------- END CONTENT ---------------- */
